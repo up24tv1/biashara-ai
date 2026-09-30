@@ -31,3 +31,18 @@ Before writing UI code for ANY page, app, component, or artifact in this repo:
 | `design-gate` | Art direction brief, anti-slop bans, runnable audit script |
 | `web-3d` | three.js / R3F / GLSL / CSS depth recipes with pinned versions |
 | `motion-system` | Timing tokens, choreography, scroll reveal, View Transitions |
+
+## Design toolchain — what is connected
+
+| Tool | Status | Use for |
+|---|---|---|
+| `shadcn` MCP (`.mcp.json`) | installed, handshake verified | `search_items_in_registries`, `view_items_in_registries`, `get_item_examples_from_registries`, `get_audit_checklist` — pull real components instead of hand-rolling |
+| Figma MCP | connected + enabled | `create_shader` / `list_shaders`, `get_motion_context`, `search_design_system`, `get_design_context`, `weave_run_model` (image/video gen). Underused — check it before hand-writing GLSL |
+| Canva MCP | connected | `generate-image`, `generate-design`, brand templates |
+| Vercel / Cloudflare MCP | connected | deploy the result |
+| Replit / Wix / B12 MCP | connected | scaffold-and-host routes when a repo is overkill |
+
+Third-party shadcn registries (Magic UI, Aceternity, Origin UI — the sources for 3D cards,
+aurora/beam backgrounds, animated components) are added with `npx shadcn registry add`.
+Their domains are blocked by this cloud environment's network policy, so add them from a
+machine with open network access; the URLs were not verifiable from here.
